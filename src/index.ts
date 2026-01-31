@@ -14,6 +14,7 @@ export default {
       JSON.stringify({
         message: "This worker runs on a schedule",
         last_run: result?.last_run,
+        rand: Math.random(),
       }),
       { headers: { "Content-Type": "application/json" } },
     );
