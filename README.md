@@ -8,23 +8,15 @@ A quickstart template for **scheduled jobs** built with **Cloudflare Workers**, 
 
 ## Cloudflare Project Configuration
 
-Before deployment, the project name used by Wrangler must be defined in the `config.name` field of `package.json`.
-
-## Getting Started
-
 1. Install dependencies: `npm install`
 
 1. Log in to Cloudflare (if not already logged in): `npm run login`
 
-1. Start the local **development** server (hot reload enabled): `npm run dev`
+1. You must define the Cloudflare **project name** used by Wrangler. Edit `wrangler.toml` to update the `name` field.
 
-## Database (Cloudflare D1)
+1. This project uses Cloudflare **D1** database. The database binding must be declared in `wrangler.toml` before running locally or deploying.
 
-This project supports an optional Cloudflare **D1** database.
-
-When D1 is used, the database binding **must** be declared in `wrangler.toml` before running locally or deploying.
-
-### Configuration
+### Database Configuration
 
 ```toml
 [[d1_databases]]
@@ -38,12 +30,18 @@ remote = true
 
 The following npm scripts are provided for the D1 database management:
 
-- `npm run db:info` — show D1 database info
-- `npm run db:create` — create D1 database
-- `npm run db:init` — initialize D1 schema
+- `npm run db:list` — list all D1 databases
+- `npm run db:create <db_name>` — create D1 database
+- `npm run db:info <db_name>` — show D1 database info
+- `npm run db:init <db_name>` — initialize D1 schema
+- `npm run db:delete <db_name>` — delete D1 database
 
-## Quick Workflow For Deployments
+## Development Mode
 
-1. Log in to Cloudflare (if not already logged in): `npm run login`
+1. Install dependencies: `npm install`
+
+1. Start the local **development** server (hot reload enabled): `npm run dev`
+
+## Deployment to Cloudflare
 
 2. Deploy to Cloudflare: `npm run deploy`

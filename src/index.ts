@@ -8,12 +8,12 @@ export default {
 
   async fetch(req: Request, env: Env, ctx: ExecutionContext) {
     const result = await env.db
-      .prepare("SELECT DATETIME('now', 'localtime') as db")
+      .prepare("SELECT date as last_run from jobs order by date desc")
       .first();
     return new Response(
       JSON.stringify({
-        message: "This worker runs on a schedule.",
-        result,
+        message: "This worker runs on a schedule",
+        last_run: result?.last_run,
       }),
       { headers: { "Content-Type": "application/json" } },
     );

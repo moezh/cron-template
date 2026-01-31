@@ -1,17 +1,17 @@
 {
-  "config": {
-    "name": "cron-template"
-  },
   "scripts": {
     "dev": "wrangler dev --test-scheduled",
     "login": "wrangler login",
-    "deploy": "wrangler deploy --name $npm_package_config_name",
-    "db:info": "wrangler d1 info $npm_package_config_name",
-    "db:create": "wrangler d1 create --use-remote --binding db $npm_package_config_name",
-    "db:init": "wrangler d1 execute -y --remote --file=src/schema.sql $npm_package_config_name"
+    "deploy": "wrangler deploy",
+    "db:list": "wrangler d1 list",
+    "db:create": "wrangler d1 create --use-remote --binding db",
+    "db:info": "wrangler d1 info",
+    "db:init": "wrangler d1 execute -y --remote --file=src/schema.sql",
+    "db:delete": "wrangler d1 delete",
+    "wrangler": "wrangler"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20260129.0",
+    "@cloudflare/workers-types": "^4.20260131.0",
     "typescript": "^5.9.3",
     "wrangler": "^4.61.1"
   }

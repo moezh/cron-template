@@ -1,12 +1,18 @@
+name = "cron-template"
 main = "src/index.ts"
 compatibility_date = "2026-01-01"
 compatibility_flags = [ "nodejs_compat" ]
+workers_dev = false
+
+[[routes]]
+pattern = "cron-template.moezh.com"
+custom_domain = true
 
 [triggers]
-crons = ["*/10 * * * *"]
+crons = ["0 * * * *"]
 
 [[d1_databases]]
 binding = "db"
-database_name = "cron-template"
-database_id = "7b2855ec-4106-425f-851c-4a730832a365"
+database_name = "cron"
+database_id = "b4a9f6d9-cae5-4b1b-a9b0-1e3f6f174562"
 remote = true
