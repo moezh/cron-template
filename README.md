@@ -40,8 +40,8 @@ The following npm scripts are provided for the D1 database management:
 
 1. Install dependencies: `npm install`
 
-1. Start the local **development** server (hot reload enabled): `npm run dev`
+2. Start the local **development** server (hot reload enabled): `npm run dev`
 
 ## Deployment to Cloudflare
 
-2. Deploy to Cloudflare: `npm run deploy`
+1. Deploy to Cloudflare: `npm run deploy`
